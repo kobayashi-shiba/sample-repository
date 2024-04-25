@@ -28,24 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Input_1 = new Button();
-            Input_2 = new Button();
+            Input_1 = new InputBtn();
+            Input_2 = new InputBtn();
             Operator_plus = new Button();
             Operator_equal = new Button();
-            Input_3 = new Button();
-            Input_4 = new Button();
-            Input_5 = new Button();
-            Input_6 = new Button();
-            Input_7 = new Button();
-            Input_8 = new Button();
-            Input_9 = new Button();
-            Input_0 = new Button();
+            Input_3 = new InputBtn();
+            Input_4 = new InputBtn();
+            Input_5 = new InputBtn();
+            Input_6 = new InputBtn();
+            Input_7 = new InputBtn();
+            Input_8 = new InputBtn();
+            Input_9 = new InputBtn();
+            Input_0 = new InputBtn();
             operator_minus = new Button();
             operator_multi = new Button();
             operator_div = new Button();
             Result_box = new TextBox();
             Resetbtn = new Button();
             Result_exp = new TextBox();
+            menuStrip1 = new MenuStrip();
+            設定ToolStripMenuItem = new ToolStripMenuItem();
+            colorToolStripMenuItem = new ToolStripMenuItem();
+            redToolStripMenuItem = new ToolStripMenuItem();
+            greenToolStripMenuItem = new ToolStripMenuItem();
+            yellowToolStripMenuItem = new ToolStripMenuItem();
+            blackToolStripMenuItem = new ToolStripMenuItem();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // Input_1
@@ -239,7 +247,7 @@
             Result_box.BorderStyle = BorderStyle.None;
             Result_box.Font = new Font("メイリオ", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 128);
             Result_box.ForeColor = SystemColors.Window;
-            Result_box.Location = new Point(55, 89);
+            Result_box.Location = new Point(55, 93);
             Result_box.Name = "Result_box";
             Result_box.Size = new Size(643, 41);
             Result_box.TabIndex = 16;
@@ -266,19 +274,71 @@
             Result_exp.BorderStyle = BorderStyle.None;
             Result_exp.Font = new Font("メイリオ", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 128);
             Result_exp.ForeColor = SystemColors.Window;
-            Result_exp.Location = new Point(55, 25);
+            Result_exp.Location = new Point(55, 40);
             Result_exp.Name = "Result_exp";
             Result_exp.Size = new Size(643, 41);
             Result_exp.TabIndex = 18;
             Result_exp.TextAlign = HorizontalAlignment.Right;
             Result_exp.TextChanged += Result_exp_TextChanged;
             // 
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { 設定ToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(742, 28);
+            menuStrip1.TabIndex = 19;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // 設定ToolStripMenuItem
+            // 
+            設定ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { colorToolStripMenuItem });
+            設定ToolStripMenuItem.Name = "設定ToolStripMenuItem";
+            設定ToolStripMenuItem.Size = new Size(53, 24);
+            設定ToolStripMenuItem.Text = "設定";
+            // 
+            // colorToolStripMenuItem
+            // 
+            colorToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { redToolStripMenuItem, greenToolStripMenuItem, yellowToolStripMenuItem, blackToolStripMenuItem });
+            colorToolStripMenuItem.Name = "colorToolStripMenuItem";
+            colorToolStripMenuItem.Size = new Size(224, 26);
+            colorToolStripMenuItem.Text = "Color";
+            // 
+            // redToolStripMenuItem
+            // 
+            redToolStripMenuItem.Name = "redToolStripMenuItem";
+            redToolStripMenuItem.Size = new Size(224, 26);
+            redToolStripMenuItem.Text = "red";
+            redToolStripMenuItem.Click += redToolStripMenuItem_Click;
+            // 
+            // greenToolStripMenuItem
+            // 
+            greenToolStripMenuItem.Name = "greenToolStripMenuItem";
+            greenToolStripMenuItem.Size = new Size(224, 26);
+            greenToolStripMenuItem.Text = "green";
+            greenToolStripMenuItem.Click += greenToolStripMenuItem_Click;
+            // 
+            // yellowToolStripMenuItem
+            // 
+            yellowToolStripMenuItem.Name = "yellowToolStripMenuItem";
+            yellowToolStripMenuItem.Size = new Size(224, 26);
+            yellowToolStripMenuItem.Text = "yellow";
+            yellowToolStripMenuItem.Click += yellowToolStripMenuItem_Click;
+            // 
+            // blackToolStripMenuItem
+            // 
+            blackToolStripMenuItem.Name = "blackToolStripMenuItem";
+            blackToolStripMenuItem.Size = new Size(224, 26);
+            blackToolStripMenuItem.Text = "black";
+            blackToolStripMenuItem.Click += blackToolStripMenuItem_Click;
+            // 
             // Calculator
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
-            ClientSize = new Size(742, 595);
+            ClientSize = new Size(742, 608);
             Controls.Add(Result_exp);
             Controls.Add(Resetbtn);
             Controls.Add(Result_box);
@@ -297,32 +357,43 @@
             Controls.Add(Operator_plus);
             Controls.Add(Input_2);
             Controls.Add(Input_1);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             Name = "Calculator";
             Text = "Calculator";
             Load += Form1_Load;
             BackColorChanged += Form1_Load;
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private Button Input_1;
-        private Button Input_2;
+        private InputBtn Input_1;
+        private InputBtn Input_2;
         private Button Operator_plus;
         private Button Operator_equal;
-        private Button Input_3;
-        private Button Input_4;
-        private Button Input_5;
-        private Button Input_6;
-        private Button Input_7;
-        private Button Input_8;
-        private Button Input_9;
-        private Button Input_0;
+        private InputBtn Input_3;
+        private InputBtn Input_4;
+        private InputBtn Input_5;
+        private InputBtn Input_6;
+        private InputBtn Input_7;
+        private InputBtn Input_8;
+        private InputBtn Input_9;
+        private InputBtn Input_0;
         private Button operator_minus;
         private Button operator_multi;
         private Button operator_div;
         private TextBox Result_box;
         private Button Resetbtn;
         private TextBox Result_exp;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem 設定ToolStripMenuItem;
+        private ToolStripMenuItem colorToolStripMenuItem;
+        private ToolStripMenuItem redToolStripMenuItem;
+        private ToolStripMenuItem greenToolStripMenuItem;
+        private ToolStripMenuItem yellowToolStripMenuItem;
+        private ToolStripMenuItem blackToolStripMenuItem;
     }
 }

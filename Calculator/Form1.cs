@@ -148,7 +148,8 @@ namespace Calculator
                 {
                     input = input.Substring(0, 9 + a);
                     return;
-                }else if(input.Length > 10 + a)
+                }
+                else if (input.Length > 10 + a)
                 {
                     input = input.Substring(0, 10 + a);
                     return;
@@ -295,6 +296,26 @@ namespace Calculator
         private void Result_exp_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void redToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InputBtn.Change_Btncolor(Color.Red);
+        }
+
+        private void greenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InputBtn.Change_Btncolor(Color.Green);
+        }
+
+        private void yellowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InputBtn.Change_Btncolor(Color.Yellow);
+        }
+
+        private void blackToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InputBtn.Change_Btncolor(Color.Black);
         }
     }
 }
