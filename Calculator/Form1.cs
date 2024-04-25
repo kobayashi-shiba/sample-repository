@@ -105,6 +105,14 @@ namespace Calculator
 
         private void Operator_equal_Click(object sender, EventArgs e)
         {
+            if (input == "")
+            {
+                return;
+            }
+            else if(val_num == 0)
+            {
+                return;
+            }
             val[val_num++] = int.Parse(input);
             input = "";
             Calculate_Input();
@@ -144,14 +152,13 @@ namespace Calculator
                 int a = 0;
                 if (input[0] == '-')
                     a = 1;
-                if (input[0 + a] > 0x0032 || int.Parse(input.Substring(1 + a)) > 147483647 + a)
-                {
-                    input = input.Substring(0, 9 + a);
-                    return;
-                }
-                else if (input.Length > 10 + a)
+                if (input.Length > 10 + a)
                 {
                     input = input.Substring(0, 10 + a);
+                    return;
+                }else if(input[0 + a] > 0x0032 || int.Parse(input.Substring(1 + a)) > 147483647 + a)
+                {
+                    input = input.Substring(0, 9 + a);
                     return;
                 }
             }
@@ -162,7 +169,7 @@ namespace Calculator
         {
             /* cheak locate of the operator  */
             /* e.g "+"4ÅA3*"+" */
-            if (start_flag && (input == "") || input == "-")
+            if (start_flag && (input == "") || input == "-" || input == "")
                 return;
             ope += _operator;
             val[val_num++] = int.Parse(input);
@@ -182,7 +189,10 @@ namespace Calculator
             {
                 if (ope[i] == '*')
                 {
-                    if (val[i] < 0 && val[i + 1] < 0)
+                    if (val[i] == 0 || val[i+1] == 0)
+                    {
+                        val[i] = 0;
+                    }else if (val[i] < 0 && val[i + 1] < 0)
                     {
                         cheaker = INT_MAX / val[i + 1];
                         if (val[i] < cheaker)

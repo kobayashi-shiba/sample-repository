@@ -249,6 +249,7 @@
             Result_box.ForeColor = SystemColors.Window;
             Result_box.Location = new Point(55, 93);
             Result_box.Name = "Result_box";
+            Result_box.ReadOnly = true;
             Result_box.Size = new Size(643, 41);
             Result_box.TabIndex = 16;
             Result_box.Text = "0";
@@ -276,6 +277,7 @@
             Result_exp.ForeColor = SystemColors.Window;
             Result_exp.Location = new Point(55, 40);
             Result_exp.Name = "Result_exp";
+            Result_exp.ReadOnly = true;
             Result_exp.Size = new Size(643, 41);
             Result_exp.TabIndex = 18;
             Result_exp.TextAlign = HorizontalAlignment.Right;
@@ -302,34 +304,34 @@
             // 
             colorToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { redToolStripMenuItem, greenToolStripMenuItem, yellowToolStripMenuItem, blackToolStripMenuItem });
             colorToolStripMenuItem.Name = "colorToolStripMenuItem";
-            colorToolStripMenuItem.Size = new Size(224, 26);
+            colorToolStripMenuItem.Size = new Size(128, 26);
             colorToolStripMenuItem.Text = "Color";
             // 
             // redToolStripMenuItem
             // 
             redToolStripMenuItem.Name = "redToolStripMenuItem";
-            redToolStripMenuItem.Size = new Size(224, 26);
+            redToolStripMenuItem.Size = new Size(135, 26);
             redToolStripMenuItem.Text = "red";
             redToolStripMenuItem.Click += redToolStripMenuItem_Click;
             // 
             // greenToolStripMenuItem
             // 
             greenToolStripMenuItem.Name = "greenToolStripMenuItem";
-            greenToolStripMenuItem.Size = new Size(224, 26);
+            greenToolStripMenuItem.Size = new Size(135, 26);
             greenToolStripMenuItem.Text = "green";
             greenToolStripMenuItem.Click += greenToolStripMenuItem_Click;
             // 
             // yellowToolStripMenuItem
             // 
             yellowToolStripMenuItem.Name = "yellowToolStripMenuItem";
-            yellowToolStripMenuItem.Size = new Size(224, 26);
+            yellowToolStripMenuItem.Size = new Size(135, 26);
             yellowToolStripMenuItem.Text = "yellow";
             yellowToolStripMenuItem.Click += yellowToolStripMenuItem_Click;
             // 
             // blackToolStripMenuItem
             // 
             blackToolStripMenuItem.Name = "blackToolStripMenuItem";
-            blackToolStripMenuItem.Size = new Size(224, 26);
+            blackToolStripMenuItem.Size = new Size(135, 26);
             blackToolStripMenuItem.Text = "black";
             blackToolStripMenuItem.Click += blackToolStripMenuItem_Click;
             // 
